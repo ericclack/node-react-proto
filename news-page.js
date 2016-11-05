@@ -16,11 +16,11 @@ class NewsPage extends React.Component {
     constructor() {
         super();
         this.state = {
-            newsItems: null,
+            newsItems: [],
         };
     }
 
-    newsItemsFromPrismic() {
+    rawNewsItemsFromPrismic() {
         Prismic.api(PRISMIC_API_URL, function(error, api) {
             var options = {}; 
             api.query(Prismic.Predicates.at('document.type', 'news-panel'), 
@@ -34,6 +34,13 @@ class NewsPage extends React.Component {
                 }
             });
         });
+    }
+
+    newsItemsFromPrismic() {
+        return this.rawNewsItemsFromPrismic().map( (item) => {
+            title: item.getStructuredText('news-panel.title'),
+            image: item.getImage('news-panel.image').url,
+        } );
     }
 
     componentWillMount() {
