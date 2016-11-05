@@ -21,6 +21,7 @@ function processPrismicNewsItems(items) {
     return items.map( (item) => ({
         title: item.getStructuredText('news-panel.title').asText(),
         image: item.getImage('news-panel.image').url,
+        description: item.getStructuredText('news-panel.description').asText(),
         
     }) );
 }
@@ -58,7 +59,7 @@ class NewsPage extends React.Component {
     render() {
         const panels = this.state.newsItems.map( (item) =>               
             <NewsPanel title={item.title} img={item.image}
-                       description="hahahahaha!!" /> );
+                       description={item.description} /> );
         return (
             <div>{panels}</div>
         );
