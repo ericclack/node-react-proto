@@ -29,17 +29,18 @@ class NewsPanel extends React.Component {
 }
 
 class NewsPage extends React.Component {
+      getNewsItems() {
+        return [ 'title1', 'title2', 'title3' ];
+      }
+
       render() {
+        const panels = this.getNewsItems().map( (item) =>               
+          <NewsPanel title={item} img="http://placehold.it/350x150" 
+                   description="hahahahaha!!" /> );
         return (
-          <div>
-              <NewsPanel title="title1" img="http://placehold.it/350x150" 
-                 description="hahahahaha" />
-              <NewsPanel title="title1" img="http://placehold.it/350x150" 
-                 description="hahahahaha" />
-          </div>
+          <div>{panels}</div>
       )}
 }
-
 
       ReactDOM.render(<NewsPage />, document.getElementById('container'));
     </script>
