@@ -1,4 +1,3 @@
-const PRISMIC_API_URL = "http://clack.prismic.io/api";
 
 class NewsPanel extends React.Component {
     render() {
@@ -20,34 +19,8 @@ class NewsPage extends React.Component {
         };
     }
 
-    rawNewsItemsFromPrismic() {
-        Prismic.api(PRISMIC_API_URL, function(error, api) {
-            var options = {}; 
-            api.query(Prismic.Predicates.at('document.type', 'news-panel'), 
-                      options, function(error, response) { 
-                if (error) {
-                    console.log("Something went wrong: ", err);
-                }
-                else {
-                    console.log(response.results);
-                    return response.results;
-                }
-            });
-        });
-    }
-
-    newsItemsFromPrismic() {
-        return this.rawNewsItemsFromPrismic().map( (item) => {
-            title: item.getStructuredText('news-panel.title'),
-            image: item.getImage('news-panel.image').url,
-        } );
-    }
-
     componentWillMount() {
-        this.newsItemsFromPrismic();
-        this.setState({
-            newsItems: [ 'title1', 'title2', 'title3' ],
-        });
+        //this.getNewsItemsFromPrismic();
     }
 
     render() {
