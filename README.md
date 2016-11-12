@@ -1,5 +1,7 @@
 # node-react-proto
 
+...with Prismic content rendered with React in the browser.
+
 $ npm install
 
 $ npm run build
