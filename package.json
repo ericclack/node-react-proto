@@ -1,0 +1,20 @@
+{
+  "name": "aviva-proto2",
+  "version": "0.0.2",
+  "description": "A prototype for the Aviva portal",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ]
+}
