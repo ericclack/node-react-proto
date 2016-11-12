@@ -1,12 +1,13 @@
 {
   "name": "aviva-proto2",
-  "version": "0.0.2",
-  "description": "A prototype for the Aviva portal",
+  "version": "0.0.3",
+  "description": "A prototype for the Aviva portal + Node JS + Webpack",
   "engines": {
     "node": "5.9.1"
   },
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "start": "node index.js"
   },
   "dependencies": {
@@ -16,5 +17,12 @@
   "keywords": [
     "node",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^1.13.3"
+  }
 }
