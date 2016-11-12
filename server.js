@@ -13,9 +13,10 @@ app.get('/', (request, response) => (
     response.render('pages/index')
 ));
 
-app.get('/hello', (request, response) => (
-    response.send('Hello Nico!')
-));
+app.get('/hello', (request, response) => {
+    const name = request.query.name || 'Nico';
+    response.send('Hello ' + name + '!')
+});
 
 var server = app.listen(app.get('port'), () => (
     console.log('Node app is running on port', app.get('port'))

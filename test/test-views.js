@@ -7,13 +7,18 @@ describe('Views', function() {
     var server;
 
     beforeEach(function() {
-        server = require('../index');
+        server = require('../server');
     });
     afterEach(function() {
         server.close();
     });
-    it('/hello', function() {
+
+    it('/hello', function(done) {
         request(server).get('/hello')
-                       .expect('Hello Nico!');
+                       .expect('Hello Nico!', done);
+    });
+    it('Hello fred', function(done) {
+        request(server).get('/hello?name=fred')
+                       .expect('Hello fred!', done);
     });
 });

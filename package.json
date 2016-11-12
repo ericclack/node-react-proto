@@ -1,14 +1,14 @@
 {
-  "name": "aviva-proto2",
+  "name": "node-react-proto",
   "version": "0.0.3",
-  "description": "A prototype for the Aviva portal + Node JS + Webpack",
+  "description": "A prototype for Node JS + React",
   "engines": {
     "node": "5.9.1"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "babel src -d public/lib",
+    "start": "node server.js",
+    "build": "babel src/client -d public/lib",
     "test": "mocha"
   },
   "dependencies": {
