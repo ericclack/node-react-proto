@@ -17,8 +17,8 @@ app.get('/hello', (request, response) => (
     response.send('Hello Nico!')
 ));
 
-app.listen(app.get('port'), () => (
+var server = app.listen(app.get('port'), () => (
     console.log('Node app is running on port', app.get('port'))
 ));
 
-
+module.exports = server
