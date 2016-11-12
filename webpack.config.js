@@ -3,11 +3,11 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        './src/client.js'
+        './src/news-page.js'
     ],
     output: {
         path: __dirname,
-        filename: '/public/lib/bundle.js'
+        filename: '/public/lib/news-page.js'
     },
     module: {
         loaders: [

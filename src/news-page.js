@@ -1,3 +1,4 @@
+import getNewsItemsFromPrismic from './prismic-news';
 
 class NewsPanel extends React.Component {
     render() {
