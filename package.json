@@ -12,8 +12,14 @@
     "test": "mocha"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "express-stormpath": "^3.1.6",
+    "forms": "^1.2.0",
+    "xtend": "^4.0.1"
   },
   "keywords": [
     "node",

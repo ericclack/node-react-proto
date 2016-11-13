@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Node + React Prototype 3</title>
+    <title>Node + React + Prismic + Stormpath Prototype</title>
     <link rel="stylesheet" href="inc/base.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
@@ -14,12 +14,22 @@
     <script src="lib/prismic-news.js"></script>
   </head>
   <body>
-    <h1>Node + React Prototype 3</h1>
+    <h1>Node + React + Prismic + Stormpath Prototype</h1>
 
-    <p><%= Date(); %></p>
+    <% if (locals.user) {  %>
+    <p>Welcome <%= user.fullName %> . 
+       <form action="/logout" method="POST">
+         <input type="submit" name="logout" value="Logout"/>
+       </form>
+    </p>
+
+    <script type="text/babel" src="lib/news-page.js"></script>
+    
+    <%  } else { %>
+      <p><a href="/login">Login</a></p>    
+    <% } %>
 
     <div id="container"></div>
 
-    <script type="text/babel" src="lib/news-page.js"></script>
   </body>
 </html>
