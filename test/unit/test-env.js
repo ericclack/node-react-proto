@@ -8,10 +8,10 @@ var expect = require('chai').expect;
 describe('Test presence of env vars', function() {
 
     test_it = function(key) {
-        it('Test env for ' + key), function() {
+        it('Test env for ' + key, function() {
             t = process.env[key];
-            expect(t).to.exist();
-        }
+            expect(t).to.not.be.undefined;
+        })
     };
 
     test_it('STORMPATH_CLIENT_APIKEY_ID');
