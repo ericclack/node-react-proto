@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Node + React + Prismic + Stormpath Prototype</title>
     <link rel="stylesheet" href="inc/base.css" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://unpkg.com/prismic.io/dist/prismic.io.min.js"></script>
 
@@ -16,20 +14,19 @@
   <body>
     <h1>Node + React + Prismic + Stormpath Prototype</h1>
 
-    <% if (locals.user) {  %>
+ <% if (locals.user) {  %>
     <p>Welcome <%= user.fullName %> . 
        <form action="/logout" method="POST">
          <input type="submit" name="logout" value="Logout"/>
        </form>
     </p>
 
-    <script type="text/babel" src="lib/news-page.js"></script>
-    
-    <%  } else { %>
-      <p><a href="/login">Login</a></p>    
-    <% } %>
-
     <div id="container"></div>
+    <script src="lib/news-page.js"></script>
+    
+ <%  } else { %>
+      <p><a href="/login">Login</a></p>    
+ <% } %>
 
   </body>
 </html>
