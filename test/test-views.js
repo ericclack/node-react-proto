@@ -3,7 +3,7 @@ var request = require('supertest');
 
 // https://glebbahmutov.com/blog/how-to-correctly-unit-test-express-server/
 
-describe('Views', function() {
+describe('Test views using server', function() {
     var server;
 
     beforeEach(function() {
@@ -13,12 +13,12 @@ describe('Views', function() {
         server.close();
     });
 
-    it('/hello', function(done) {
-        request(server).get('/hello')
-                       .expect('Hello Nico!', done);
-    });
-    it('Hello fred', function(done) {
+    it('Test Hello fred', function(done) {
         request(server).get('/hello?name=fred')
                        .expect('Hello fred!', done);
+    });
+    it('Test /hello', function(done) {
+        request(server).get('/hello')
+                       .expect('Hello Nico!', done);
     });
 });

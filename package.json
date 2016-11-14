@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "babel src/client -d public/lib",
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
